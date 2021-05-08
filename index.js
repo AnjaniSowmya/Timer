@@ -12,6 +12,7 @@ function onStart() {
 }
 
 function onResume() {
+    $("#pause-resume").html("Pause");
     const now = new Date().getTime();
     const deadline = seconds * 1000 + now;
     interval = setInterval(() => {
@@ -37,6 +38,7 @@ function onPauseResume() {
         clearInterval(interval);
         interval = undefined;
         seconds = distance/1000;
+        $("#pause-resume").html("Resume");
     }
     else {
         // Resuming...
