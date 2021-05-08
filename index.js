@@ -22,7 +22,10 @@ function onResume() {
         var mintoshow = ("0"+minutes).slice(-2);
         var sectoshow = ("0"+seconds).slice(-2);
         $("#timer").html(mintoshow + ':' + sectoshow);
-        if(distance<=0) clearInterval(interval);
+        if(distance<=0) {
+            clearInterval(interval);
+            $("#timer").html('00:00');
+        }
     }, 500);
 }
 
